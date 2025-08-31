@@ -14,13 +14,13 @@
                         inter: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        // Paleta de colores para tu negocio de granja
-                        'primary': '#4CAF50', // Verde vibrante para los títulos y acentos
-                        'secondary': '#FFC107', // Amarillo mostaza para resaltar
-                        'background-dark': '#2E403C', // Gris verdoso oscuro para el fondo
-                        'background-light': '#F0F4F2', // Un blanco roto para fondos de sección
-                        'text-light': '#F0F4F2', // Texto claro
-                        'text-dark': '#2E403C', // Texto oscuro
+                        // Nueva paleta de colores de cosecha y tierra
+                        'primary': '#3CB371', // Verde semioscuro para resaltar
+                        'secondary': '#DCDCDC', // Gris claro para contraste limpio
+                        'background-dark': '#2C3E50', // Azul-gris oscuro y moderno
+                        'background-light': '#FFFFFF', // Blanco puro
+                        'text-light': '#FFFFFF', // Texto claro
+                        'text-dark': '#333333', // Texto oscuro
                     }
                 }
             }
@@ -44,7 +44,7 @@
                 Productos frescos y de calidad, directo de nuestra granja a tu mesa.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-                <a href="#productos" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                <a href="#productos" class="bg-primary text-text-light font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
                     Ver Productos
                 </a>
                 <a href="#contacto" class="bg-secondary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
@@ -58,10 +58,10 @@
     <main class="py-16 px-8 bg-background-light text-text-dark" id="productos">
         <div class="max-w-6xl mx-auto space-y-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary">Nuestros Productos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Tarjeta de Producto - Cuy -->
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105">
-                    <img src="https://placehold.co/600x400/8BC34A/FFFFFF?text=Carne+de+Cuy" alt="Carne de Cuy" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/8B0000/FFFFFF?text=Carne+de+Cuy" alt="Carne de Cuy" class="w-full h-48 object-cover">
                     <div class="p-6 text-center space-y-3">
                         <h3 class="text-xl font-semibold text-text-dark">Carne de Cuy</h3>
                         <p class="text-gray-600">
@@ -72,7 +72,7 @@
 
                 <!-- Tarjeta de Producto - Pollo -->
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105">
-                    <img src="https://placehold.co/600x400/FF9800/FFFFFF?text=Pollo+de+Granja" alt="Pollo de Granja" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/DCDCDC/333333?text=Pollo+de+Granja" alt="Pollo de Granja" class="w-full h-48 object-cover">
                     <div class="p-6 text-center space-y-3">
                         <h3 class="text-xl font-semibold text-text-dark">Pollo de Granja</h3>
                         <p class="text-gray-600">
@@ -83,11 +83,22 @@
 
                 <!-- Tarjeta de Producto - Derivados (Ejemplo) -->
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105">
-                    <img src="https://placehold.co/600x400/795548/FFFFFF?text=Derivados" alt="Derivados" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/FFFFFF/333333?text=Derivados" alt="Derivados" class="w-full h-48 object-cover">
                     <div class="p-6 text-center space-y-3">
                         <h3 class="text-xl font-semibold text-text-dark">Derivados</h3>
                         <p class="text-gray-600">
                             (Descripción de productos como embutidos, etc. ¡Puedes cambiar esto!)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nueva Tarjeta de Producto - Productos Sanitarios -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/2C3E50/FFFFFF?text=Productos+Sanitarios" alt="Productos Sanitarios" class="w-full h-48 object-cover">
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="text-xl font-semibold text-text-dark">Productos Sanitarios</h3>
+                        <p class="text-gray-600">
+                            Productos especializados para el cuidado y la salud de tus animales, con la garantía de expertos veterinarios.
                         </p>
                     </div>
                 </div>
@@ -108,11 +119,30 @@
                 <form id="review-form" class="mt-6 space-y-4">
                     <input type="text" id="review-name" placeholder="Tu Nombre" required class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-text-light">
                     <textarea id="review-comment" placeholder="Escribe tu reseña aquí..." rows="4" required class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-text-light"></textarea>
-                    <button type="submit" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                    <button type="submit" class="bg-primary text-text-light font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
                         Enviar Reseña
                     </button>
                 </form>
             </div>
+        </div>
+    </section>
+    
+    <!-- Nueva Sección: Suscríbete al Boletín -->
+    <section class="py-16 px-8 bg-background-light text-text-dark" id="newsletter">
+        <div class="max-w-2xl mx-auto text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">Suscríbete a nuestro Boletín</h2>
+            <p class="text-lg sm:text-xl leading-relaxed">
+                Recibe noticias exclusivas sobre nuestra granja, recetas de temporada y ofertas especiales directamente en tu bandeja de entrada.
+            </p>
+            <form id="newsletter-form" class="mt-8 space-y-4">
+                <input type="email" id="newsletter-email" placeholder="Tu correo electrónico" required 
+                       class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-primary focus:border-primary text-text-dark">
+                <button type="submit" 
+                        class="bg-secondary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                    ¡Suscríbete ahora!
+                </button>
+            </form>
+            <p id="newsletter-message" class="text-sm text-primary opacity-0 transition-opacity duration-300 mt-2"></p>
         </div>
     </section>
 
@@ -124,10 +154,10 @@
                 ¿Buscas inspiración? Selecciona un producto y deja que la inteligencia artificial te sugiera una receta única y deliciosa.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-                <button id="receta-cuy-button" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                <button id="receta-cuy-button" class="bg-primary text-text-light font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
                     Receta de Cuy ✨
                 </button>
-                <button id="receta-pollo-button" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                <button id="receta-pollo-button" class="bg-primary text-text-light font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
                     Receta de Pollo ✨
                 </button>
             </div>
@@ -170,7 +200,7 @@
                 <div class="text-left">
                     <label for="email" class="block text-sm font-medium text-gray-400">Tu Correo Electrónico</label>
                     <input type="email" id="email" name="email" required
-                        class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary text-text-light">
+                        class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary text-text-light"></textarea>
                 </div>
                 <!-- Campo para el mensaje/pedido -->
                 <div class="text-left">
@@ -181,7 +211,7 @@
                 
                 <!-- Botón de envío -->
                 <div class="text-center">
-                    <button type="submit" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                    <button type="submit" class="bg-primary text-text-light font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
                         Enviar Mensaje
                     </button>
                 </div>
@@ -281,6 +311,8 @@
     <script>
         const form = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterMessage = document.getElementById('newsletter-message');
 
         form.addEventListener('submit', async function(event) {
             event.preventDefault();
@@ -318,10 +350,28 @@
                 }, 5000);
             }
         });
+
+        // Event listener para el formulario del boletín de noticias
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value;
+
+            // En un entorno de producción, enviarías el correo electrónico a tu servidor.
+            // Aquí, simplemente mostramos un mensaje de confirmación.
+            console.log(`Correo electrónico de suscripción recibido: ${email}`);
+            newsletterMessage.textContent = `¡Gracias por suscribirte, ${email}!`;
+            newsletterMessage.classList.add('opacity-100');
+            newsletterForm.reset();
+
+            setTimeout(() => {
+                newsletterMessage.classList.remove('opacity-100');
+            }, 3000);
+        });
         
-        // --- Funcionalidad de Recetas con Gemini ---
-        const RECIPE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent`;
-        const IMAGE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict`;
+        // --- Funcionalidad de Recetas con Gemini (simulada) ---
+        // Se cambió para que llame a un endpoint del servidor en lugar de la API directamente
+        const SERVER_RECIPE_ENDPOINT = '/generarReceta';
         const recetaContainer = document.getElementById('receta-container');
         const recetaLoading = document.getElementById('receta-loading');
         const imageLoading = document.getElementById('image-loading');
@@ -330,110 +380,67 @@
         async function generarReceta(producto) {
             recetaContainer.classList.remove('hidden');
             recetaLoading.classList.remove('hidden');
+            imageLoading.classList.remove('hidden'); // Aseguramos que el mensaje de carga de la imagen esté visible
             recetaContent.innerHTML = '';
             
+            // --- FIX: La URL '/generarReceta' no es válida en este entorno de vista previa. ---
+            // --- Para solucionar el error, simulamos la respuesta de un servidor. ---
+            // Esto es solo para fines de demostración en este entorno de vista previa.
+            const mockedResponse = {
+                titulo: producto === 'cuy' ? 'Cuy al Horno con Hierbas Andinas' : 'Pollo Criollo a la Brasa',
+                pasos: [
+                    'Prepara el adobo con hierbas frescas, ajo y especias.',
+                    'Marina el cuy/pollo durante al menos 2 horas.',
+                    'Hornea o asa a la parrilla hasta que la piel esté dorada y crujiente.',
+                    'Sirve con papas nativas y una ensalada fresca.'
+                ],
+                imageUrl: producto === 'cuy' ? 'https://placehold.co/600x400/8B0000/FFFFFF?text=Cuy+al+Horno' : 'https://placehold.co/600x400/DCDCDC/333333?text=Pollo+a+la+Brasa'
+            };
+
+            console.log('Simulando la llamada al servidor para generar la receta...');
+            
             try {
-                // Paso 1: Generar la receta de texto
-                const prompt = `Genera una receta para un plato único y delicioso con ${producto}. El formato debe ser un objeto JSON con dos propiedades: "titulo" y "pasos", que es un array de strings. Asegúrate de que los pasos sean detallados y fáciles de seguir.`;
-                const payload = {
-                    contents: [{ parts: [{ text: prompt }] }],
-                    generationConfig: {
-                        responseMimeType: "application/json",
-                        responseSchema: {
-                            type: "OBJECT",
-                            properties: {
-                                "titulo": { "type": "STRING" },
-                                "pasos": {
-                                    "type": "ARRAY",
-                                    "items": { "type": "STRING" }
-                                }
-                            }
-                        }
-                    }
-                };
+                // Simulamos una demora de 2 segundos para imitar una llamada de red
+                const result = await new Promise(resolve => setTimeout(() => resolve(mockedResponse), 2000));
                 
-                const response = await fetch(RECIPE_API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Error en la solicitud de receta: ${response.status}`);
-                }
-
-                const result = await response.json();
-                const jsonText = result.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                if (!jsonText) {
-                    recetaContent.innerHTML = '<p class="text-red-400">No se pudo generar la receta. Intenta de nuevo.</p>';
-                    return;
-                }
+                // Ocultar mensajes de carga
+                recetaLoading.classList.add('hidden');
+                imageLoading.classList.add('hidden');
                 
-                const receta = JSON.parse(jsonText);
-                recetaLoading.classList.add('hidden'); // Ocultar el mensaje de carga de la receta
+                // Mostrar el contenido de la receta y la imagen
+                const { titulo, pasos, imageUrl } = result;
 
-                // Mostrar el contenido de la receta
-                const titulo = document.createElement('h3');
-                titulo.className = 'text-xl font-bold text-primary';
-                titulo.textContent = receta.titulo;
-                
-                recetaContent.appendChild(titulo);
-
-                // Nuevo: Verificar si los pasos existen y son un array antes de iterar
-                if (receta.pasos && Array.isArray(receta.pasos)) {
-                    const pasosList = document.createElement('ol');
-                    pasosList.className = 'list-decimal list-inside space-y-2 text-text-light';
-                    receta.pasos.forEach(paso => {
-                        const li = document.createElement('li');
-                        li.textContent = paso;
-                        pasosList.appendChild(li);
-                    });
-                    recetaContent.appendChild(pasosList);
-                } else {
-                    const errorMessage = document.createElement('p');
-                    errorMessage.className = 'text-red-400';
-                    errorMessage.textContent = 'Error: No se pudo encontrar los pasos de la receta.';
-                    recetaContent.appendChild(errorMessage);
-                }
-
-                // Paso 2: Generar la imagen del plato basado en el título de la receta
-                imageLoading.classList.remove('hidden'); // Mostrar mensaje de carga de la imagen
-                const imagePayload = { 
-                    instances: { prompt: `A photo of ${receta.titulo}` },
-                    parameters: { "sampleCount": 1 }
-                };
-                
-                const imageResponse = await fetch(IMAGE_API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(imagePayload)
-                });
-
-                if (!imageResponse.ok) {
-                    throw new Error(`Error en la solicitud de imagen: ${imageResponse.status}`);
-                }
-
-                const imageResult = await imageResponse.json();
-                const base64Data = imageResult.predictions?.[0]?.bytesBase64Encoded;
-
-                if (base64Data) {
-                    const imageUrl = `data:image/png;base64,${base64Data}`;
+                // Mostrar la imagen
+                if (imageUrl) {
                     const img = document.createElement('img');
                     img.src = imageUrl;
-                    img.alt = receta.titulo;
+                    img.alt = titulo;
                     img.className = 'mt-4 w-full h-auto rounded-lg shadow-lg';
-                    recetaContent.prepend(img); // Añadir la imagen al inicio del contenedor
-                } else {
-                    recetaContent.prepend('<p class="text-red-400">No se pudo generar la imagen.</p>');
+                    recetaContent.prepend(img);
+                }
+                
+                // Mostrar el título y los pasos de la receta
+                if (titulo && pasos) {
+                    const tituloEl = document.createElement('h3');
+                    tituloEl.className = 'text-xl font-bold text-primary';
+                    tituloEl.textContent = titulo;
+                    recetaContent.appendChild(tituloEl);
+                    
+                    if (Array.isArray(pasos)) {
+                        const pasosList = document.createElement('ol');
+                        pasosList.className = 'list-decimal list-inside space-y-2 text-text-light';
+                        pasos.forEach(paso => {
+                            const li = document.createElement('li');
+                            li.textContent = paso;
+                            pasosList.appendChild(li);
+                        });
+                        recetaContent.appendChild(pasosList);
+                    }
                 }
 
             } catch (error) {
                 console.error("Error al generar la receta:", error);
                 recetaContent.innerHTML = `<p class="text-red-400">Ocurrió un error. Por favor, intenta de nuevo más tarde.</p>`;
-            } finally {
-                recetaLoading.classList.add('hidden');
-                imageLoading.classList.add('hidden');
             }
         }
 
@@ -442,5 +449,3 @@
     </script>
 </body>
 </html>
-
-
