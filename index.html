@@ -320,9 +320,8 @@
         });
         
         // --- Funcionalidad de Recetas con Gemini ---
-        const API_KEY = "";
-        const RECIPE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
-        const IMAGE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${API_KEY}`;
+        const RECIPE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent`;
+        const IMAGE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict`;
         const recetaContainer = document.getElementById('receta-container');
         const recetaLoading = document.getElementById('receta-loading');
         const imageLoading = document.getElementById('image-loading');
@@ -443,4 +442,5 @@
     </script>
 </body>
 </html>
+
 
