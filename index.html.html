@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm ScientLeo</title>
+    <!-- Incluye Tailwind CSS CDN para un estilo rápido y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Paleta de colores para tu negocio de granja
+                        'primary': '#4CAF50', // Verde vibrante para los títulos y acentos
+                        'secondary': '#FFC107', // Amarillo mostaza para resaltar
+                        'background-dark': '#2E403C', // Gris verdoso oscuro para el fondo
+                        'background-light': '#F0F4F2', // Un blanco roto para fondos de sección
+                        'text-light': '#F0F4F2', // Texto claro
+                        'text-dark': '#2E403C', // Texto oscuro
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-text-light flex flex-col min-h-screen">
+
+    <!-- Sección de Héroe -->
+    <header class="flex-grow flex items-center justify-center p-8 text-center bg-gray-900">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary animate-pulse">
+                Farm ScientLeo 🌱
+            </h1>
+            <p class="text-xl sm:text-2xl text-text-light">
+                Productos frescos y de calidad, directo de nuestra granja a tu mesa.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                <a href="#productos" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                    Ver Productos
+                </a>
+                <a href="#contacto" class="bg-secondary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Productos -->
+    <main class="py-16 px-8 bg-background-light text-text-dark" id="productos">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary">Nuestros Productos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta de Producto - Cuy -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/8BC34A/FFFFFF?text=Carne+de+Cuy" alt="Carne de Cuy" class="w-full h-48 object-cover">
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="text-xl font-semibold text-text-dark">Carne de Cuy</h3>
+                        <p class="text-gray-600">
+                            Cuyes criados con los más altos estándares, con alimentación natural para garantizar un sabor exquisito.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto - Pollo -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/FF9800/FFFFFF?text=Pollo+de+Granja" alt="Pollo de Granja" class="w-full h-48 object-cover">
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="text-xl font-semibold text-text-dark">Pollo de Granja</h3>
+                        <p class="text-gray-600">
+                            Pollo de corral, jugoso y tierno, ideal para cualquier receta tradicional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto - Derivados (Ejemplo) -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/795548/FFFFFF?text=Derivados" alt="Derivados" class="w-full h-48 object-cover">
+                    <div class="p-6 text-center space-y-3">
+                        <h3 class="text-xl font-semibold text-text-dark">Derivados</h3>
+                        <p class="text-gray-600">
+                            (Descripción de productos como embutidos, etc. ¡Puedes cambiar esto!)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Sección de Reseñas de Clientes -->
+    <section class="py-16 px-8 bg-gray-800 text-text-light" id="reseñas">
+        <div class="max-w-4xl mx-auto space-y-10">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary">Reseñas de Clientes</h2>
+            <div id="reviews-list" class="space-y-6">
+                <!-- Las reseñas se cargarán aquí dinámicamente -->
+            </div>
+            
+            <div class="pt-8">
+                <h3 class="text-2xl font-semibold text-center text-secondary">Comparte tu Experiencia</h3>
+                <form id="review-form" class="mt-6 space-y-4">
+                    <input type="text" id="review-name" placeholder="Tu Nombre" required class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-text-light">
+                    <textarea id="review-comment" placeholder="Escribe tu reseña aquí..." rows="4" required class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-text-light"></textarea>
+                    <button type="submit" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                        Enviar Reseña
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Recetas con Gemini -->
+    <section class="py-16 px-8 bg-background-dark text-text-light" id="recetas">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">Recetas con ✨ Gemini</h2>
+            <p class="text-lg sm:text-xl leading-relaxed">
+                ¿Buscas inspiración? Selecciona un producto y deja que la inteligencia artificial te sugiera una receta única y deliciosa.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                <button id="receta-cuy-button" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                    Receta de Cuy ✨
+                </button>
+                <button id="receta-pollo-button" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                    Receta de Pollo ✨
+                </button>
+            </div>
+            
+            <div id="receta-container" class="mt-8 bg-gray-800 p-8 rounded-lg shadow-lg text-left hidden">
+                <p id="receta-loading" class="text-center text-secondary hidden">Generando receta...</p>
+                <p id="image-loading" class="text-center text-secondary hidden mt-4">Generando imagen...</p>
+                <div id="receta-content" class="space-y-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección "Sobre Nosotros" -->
+    <section class="py-16 px-8 bg-background-dark text-text-light" id="about">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">¿Por qué nosotros?</h2>
+            <p class="text-lg sm:text-xl leading-relaxed">
+                En Farm ScientLeo, nos dedicamos a la crianza responsable y sostenible. Nuestro compromiso es ofrecer productos de la más alta calidad, con un enfoque en el bienestar animal y en un proceso que respeta el medio ambiente.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="py-16 px-8 bg-gray-900" id="contacto">
+        <div class="max-w-2xl mx-auto text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">Hablemos</h2>
+            <p class="text-lg sm:text-xl text-text-light">
+                Si tienes alguna pregunta, deseas hacer un pedido o simplemente quieres conocer más sobre nuestro proceso, no dudes en contactarnos.
+            </p>
+            
+            <!-- Formulario de Contacto -->
+            <form id="contact-form" class="mt-8 space-y-6" action="https://formspree.io/f/f/youremail@example.com" method="POST">
+                <!-- Campo para el nombre -->
+                <div class="text-left">
+                    <label for="name" class="block text-sm font-medium text-gray-400">Tu Nombre</label>
+                    <input type="text" id="name" name="name" required
+                        class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary text-text-light">
+                </div>
+                <!-- Campo para el email -->
+                <div class="text-left">
+                    <label for="email" class="block text-sm font-medium text-gray-400">Tu Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required
+                        class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary text-text-light">
+                </div>
+                <!-- Campo para el mensaje/pedido -->
+                <div class="text-left">
+                    <label for="message" class="block text-sm font-medium text-gray-400">Tu Mensaje o Pedido</label>
+                    <textarea id="message" name="message" rows="4" required
+                        class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary text-text-light"></textarea>
+                </div>
+                
+                <!-- Botón de envío -->
+                <div class="text-center">
+                    <button type="submit" class="bg-primary text-text-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                        Enviar Mensaje
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Mensaje de confirmación -->
+            <p id="form-message" class="text-sm text-secondary opacity-0 transition-opacity duration-300">
+                ¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="bg-gray-950 text-center py-6 px-4 text-sm text-gray-400">
+        <p>Hecho con ❤️ en un nuevo comienzo. Farm ScientLeo © 2025</p>
+    </footer>
+
+    <!-- Importa Firebase JS SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+
+        setLogLevel('debug');
+        
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        // An async function to handle Firebase initialization and listeners
+        async function initializeAppAndListeners() {
+            try {
+                // Sign in anonymously first to get authentication credentials
+                const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                console.log("User signed in with UID:", auth.currentUser.uid);
+
+                // Now that the user is authenticated, we can safely access Firestore
+                const reviewsRef = collection(db, `artifacts/${appId}/public/data/reviews`);
+                const reviewsList = document.getElementById('reviews-list');
+                const reviewForm = document.getElementById('review-form');
+                const reviewNameInput = document.getElementById('review-name');
+                const reviewCommentInput = document.getElementById('review-comment');
+
+                // Real-time listener for reviews
+                onSnapshot(query(reviewsRef), (snapshot) => {
+                    reviewsList.innerHTML = '';
+                    snapshot.forEach((doc) => {
+                        const review = doc.data();
+                        const reviewElement = document.createElement('div');
+                        reviewElement.className = 'bg-gray-700 p-6 rounded-lg shadow-inner';
+                        reviewElement.innerHTML = `
+                            <p class="font-semibold text-lg text-secondary">${review.name}</p>
+                            <p class="text-gray-300 mt-2">${review.comment}</p>
+                        `;
+                        reviewsList.prepend(reviewElement);
+                    });
+                });
+
+                // Handle review form submission
+                reviewForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const name = reviewNameInput.value;
+                    const comment = reviewCommentInput.value;
+                    
+                    try {
+                        await addDoc(reviewsRef, {
+                            name: name,
+                            comment: comment,
+                            timestamp: serverTimestamp()
+                        });
+                        reviewForm.reset();
+                    } catch (error) {
+                        console.error("Error adding review:", error);
+                    }
+                });
+
+            } catch (error) {
+                console.error("Initialization error:", error);
+            }
+        }
+
+        // Call the async function to start the app
+        initializeAppAndListeners();
+    </script>
+
+    <!-- JavaScript para la funcionalidad del formulario de contacto y la API de Gemini -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                if (response.ok) {
+                    formMessage.textContent = '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.';
+                    formMessage.classList.add('opacity-100');
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        formMessage.textContent = data.errors.map(error => error.message).join(", ");
+                    } else {
+                        formMessage.textContent = 'Error al enviar el mensaje. Intenta de nuevo más tarde.';
+                    }
+                    formMessage.classList.add('opacity-100');
+                }
+            } catch (error) {
+                console.error('Error al enviar el formulario:', error);
+                formMessage.textContent = 'Ocurrió un error. Intenta de nuevo más tarde.';
+                formMessage.classList.add('opacity-100');
+            } finally {
+                setTimeout(() => {
+                    formMessage.classList.remove('opacity-100');
+                }, 5000);
+            }
+        });
+        
+        // --- Funcionalidad de Recetas con Gemini ---
+        const API_KEY = "";
+        const RECIPE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
+        const IMAGE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${API_KEY}`;
+        const recetaContainer = document.getElementById('receta-container');
+        const recetaLoading = document.getElementById('receta-loading');
+        const imageLoading = document.getElementById('image-loading');
+        const recetaContent = document.getElementById('receta-content');
+
+        async function generarReceta(producto) {
+            recetaContainer.classList.remove('hidden');
+            recetaLoading.classList.remove('hidden');
+            recetaContent.innerHTML = '';
+            
+            try {
+                // Paso 1: Generar la receta de texto
+                const prompt = `Genera una receta para un plato único y delicioso con ${producto}. El formato debe ser un objeto JSON con dos propiedades: "titulo" y "pasos", que es un array de strings. Asegúrate de que los pasos sean detallados y fáciles de seguir.`;
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: {
+                            type: "OBJECT",
+                            properties: {
+                                "titulo": { "type": "STRING" },
+                                "pasos": {
+                                    "type": "ARRAY",
+                                    "items": { "type": "STRING" }
+                                }
+                            }
+                        }
+                    }
+                };
+                
+                const response = await fetch(RECIPE_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error en la solicitud de receta: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const jsonText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (!jsonText) {
+                    recetaContent.innerHTML = '<p class="text-red-400">No se pudo generar la receta. Intenta de nuevo.</p>';
+                    return;
+                }
+                
+                const receta = JSON.parse(jsonText);
+                recetaLoading.classList.add('hidden'); // Ocultar el mensaje de carga de la receta
+
+                // Mostrar el contenido de la receta
+                const titulo = document.createElement('h3');
+                titulo.className = 'text-xl font-bold text-primary';
+                titulo.textContent = receta.titulo;
+                
+                recetaContent.appendChild(titulo);
+
+                // Nuevo: Verificar si los pasos existen y son un array antes de iterar
+                if (receta.pasos && Array.isArray(receta.pasos)) {
+                    const pasosList = document.createElement('ol');
+                    pasosList.className = 'list-decimal list-inside space-y-2 text-text-light';
+                    receta.pasos.forEach(paso => {
+                        const li = document.createElement('li');
+                        li.textContent = paso;
+                        pasosList.appendChild(li);
+                    });
+                    recetaContent.appendChild(pasosList);
+                } else {
+                    const errorMessage = document.createElement('p');
+                    errorMessage.className = 'text-red-400';
+                    errorMessage.textContent = 'Error: No se pudo encontrar los pasos de la receta.';
+                    recetaContent.appendChild(errorMessage);
+                }
+
+                // Paso 2: Generar la imagen del plato basado en el título de la receta
+                imageLoading.classList.remove('hidden'); // Mostrar mensaje de carga de la imagen
+                const imagePayload = { 
+                    instances: { prompt: `A photo of ${receta.titulo}` },
+                    parameters: { "sampleCount": 1 }
+                };
+                
+                const imageResponse = await fetch(IMAGE_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(imagePayload)
+                });
+
+                if (!imageResponse.ok) {
+                    throw new Error(`Error en la solicitud de imagen: ${imageResponse.status}`);
+                }
+
+                const imageResult = await imageResponse.json();
+                const base64Data = imageResult.predictions?.[0]?.bytesBase64Encoded;
+
+                if (base64Data) {
+                    const imageUrl = `data:image/png;base64,${base64Data}`;
+                    const img = document.createElement('img');
+                    img.src = imageUrl;
+                    img.alt = receta.titulo;
+                    img.className = 'mt-4 w-full h-auto rounded-lg shadow-lg';
+                    recetaContent.prepend(img); // Añadir la imagen al inicio del contenedor
+                } else {
+                    recetaContent.prepend('<p class="text-red-400">No se pudo generar la imagen.</p>');
+                }
+
+            } catch (error) {
+                console.error("Error al generar la receta:", error);
+                recetaContent.innerHTML = `<p class="text-red-400">Ocurrió un error. Por favor, intenta de nuevo más tarde.</p>`;
+            } finally {
+                recetaLoading.classList.add('hidden');
+                imageLoading.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('receta-cuy-button').addEventListener('click', () => generarReceta('cuy'));
+        document.getElementById('receta-pollo-button').addEventListener('click', () => generarReceta('pollo'));
+    </script>
+</body>
+</html>
+
